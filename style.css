@@ -1,0 +1,544 @@
+/* =========================
+   ABESPHERE - NEW DESIGN
+========================= */
+
+:root {
+    --pink: #a64d75;
+    --dark-pink: #813654;
+    --light-pink: #fff0f5;
+    --pale-pink: #fff8fa;
+    --white: #ffffff;
+    --text: #493541;
+    --muted: #917b87;
+    --border: #f0dce5;
+    --shadow: 0 5px 22px rgba(100, 48, 75, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--pale-pink);
+    color: var(--text);
+    text-align: left;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    background: var(--pink);
+    color: white;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--dark-pink);
+    transform: translateY(-2px);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* MAIN LAYOUT */
+
+.app-layout {
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 255px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid var(--border);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.brand {
+    padding: 0 10px 35px;
+}
+
+.brand h2 {
+    color: var(--pink);
+    font-size: 27px;
+    margin: 0 0 7px;
+}
+
+.brand h2 span {
+    color: #e7a0bb;
+}
+
+.brand p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+.nav-heading {
+    color: #b29eaa;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 20px 10px 10px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    color: #77616e;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-link span {
+    font-size: 20px;
+    width: 23px;
+    text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--light-pink);
+    color: var(--pink);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 15px 10px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.sidebar-footer strong {
+    color: var(--pink);
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    margin-left: 255px;
+    padding: 0 40px;
+    max-width: 1600px;
+}
+
+/* TOP BAR */
+
+.topbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: var(--pale-pink);
+}
+
+.topbar-label,
+.section-label,
+.welcome-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: var(--pink);
+}
+
+.topbar h3 {
+    margin: 5px 0;
+}
+
+.topbar-profile {
+    background: white;
+    padding: 12px 17px;
+    border-radius: 12px;
+    color: var(--pink);
+    font-size: 13px;
+}
+
+/* WELCOME */
+
+.welcome {
+    margin: 35px 0;
+    padding: 45px;
+    background: linear-gradient(120deg, #f5d9e5, #fff0f5);
+    border-radius: 20px;
+}
+
+.welcome h1 {
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    color: var(--dark-pink);
+}
+
+.welcome-content > p:last-child {
+    color: #765b6a;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+/* SECTION COMMON */
+
+section {
+    width: 100%;
+    margin: 35px 0;
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    color: var(--dark-pink);
+}
+
+.section-heading h2 {
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* LOGIN */
+
+.login {
+    max-width: 480px;
+}
+
+.login input,
+#pyqSearch,
+#doubtTitle,
+#doubtDescription {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 10px 0;
+    background: white;
+    outline-color: var(--pink);
+}
+
+.login p {
+    color: var(--muted);
+}
+
+/* DASHBOARD */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.dashboard-card {
+    background: var(--pale-pink);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    font-size: 27px;
+    color: var(--pink);
+}
+
+.dashboard-card h3 {
+    color: var(--dark-pink);
+}
+
+.dashboard-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.card-action {
+    color: var(--pink);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    background: var(--dark-pink);
+    color: white;
+}
+
+.countdown h2,
+.countdown h3,
+.countdown .section-label {
+    color: white;
+}
+
+#countdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#countdown span {
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+}
+
+/* SUBJECT BUTTONS */
+
+.pyq-subjects,
+.doubt-subjects,
+.video-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.pyq-subjects button,
+.doubt-subjects button,
+.video-subjects button {
+    background: var(--light-pink);
+    color: var(--dark-pink);
+    border: 1px solid var(--border);
+}
+
+.pyq-subjects button:hover,
+.doubt-subjects button:hover,
+.video-subjects button:hover {
+    background: #f5dce7;
+}
+
+/* RESULT CARDS */
+
+.pyq-card,
+.doubt-card,
+.video-card,
+.exam-info,
+.profile-card {
+    background: var(--pale-pink);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin: 18px 0;
+}
+
+.pyq-card h3,
+.doubt-card h3,
+.video-card h3,
+.profile-card h3 {
+    color: var(--dark-pink);
+}
+
+.doubt-card {
+    text-align: left;
+}
+
+.subject-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--pink);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+#doubtDescription {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* PROFILE */
+
+.profile-card {
+    max-width: 450px;
+    text-align: center;
+    margin: 25px auto;
+}
+
+.profile-icon {
+    font-size: 48px;
+}
+
+/* EXAM MODE */
+
+.exam-info {
+    max-width: 600px;
+}
+
+/* FOOTER */
+
+.site-footer {
+    text-align: center;
+    padding: 35px 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.site-footer h3 {
+    color: var(--pink);
+}
+
+/* FOCUS MODE */
+
+body.exam-active .sidebar,
+body.exam-active .topbar,
+body.exam-active .welcome,
+body.exam-active .login,
+body.exam-active .dashboard,
+body.exam-active .pyq-section,
+body.exam-active .doubt-section,
+body.exam-active .video-section,
+body.exam-active .profile,
+body.exam-active .site-footer {
+    display: none;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        padding: 0 22px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 17px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+        padding: 0 5px 12px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .nav-heading,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 9px 10px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .nav-link span {
+        font-size: 16px;
+        width: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0 14px;
+    }
+
+    .topbar {
+        min-height: 70px;
+    }
+
+    .welcome {
+        padding: 25px;
+        margin: 20px 0;
+    }
+
+    section {
+        padding: 20px;
+        margin: 22px 0;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .pyq-subjects button,
+    .doubt-subjects button,
+    .video-subjects button {
+        flex: 1 1 100%;
+    }
+
+    .topbar-profile {
+        font-size: 11px;
+        padding: 9px;
+    }
+
+    #countdown {
+        font-size: 14px;
+    }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+    .main-content {
+        padding: 0 9px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+}

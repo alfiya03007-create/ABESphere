@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABESphere | Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <h2>ABESphere<span>.</span></h2>
+                <p>Your Academic Community</p>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-heading">MAIN MENU</p>
+
+                <a href="#dashboard" class="nav-link active">
+                    <span>⌂</span> Dashboard
+                </a>
+
+                <a href="#pyq-section" class="nav-link">
+                    <span>▤</span> PYQ Library
+                </a>
+
+                <a href="#doubt-section" class="nav-link">
+                    <span>✎</span> Doubt Hub
+                </a>
+
+                <a href="#video-section" class="nav-link">
+                    <span>▷</span> Video Library
+                </a>
+
+                <p class="nav-heading">MY SPACE</p>
+
+                <a href="#profile" class="nav-link">
+                    <span>♙</span> My Profile
+                </a>
+
+                <a href="#exam-mode" class="nav-link">
+                    <span>◷</span> Exam Mode
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Made for ABES students</p>
+                <strong>Learn. Connect. Grow.</strong>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <div class="topbar">
+
+                <div>
+                    <p class="topbar-label">ABES ENGINEERING COLLEGE</p>
+                    <h3>Student Portal</h3>
+                </div>
+
+                <a href="#profile" class="topbar-profile">
+                    <span>♙</span>
+                    My Account
+                </a>
+
+            </div>
+
+
+            <!-- WELCOME -->
+            <section class="welcome" id="welcome">
+
+                <div class="welcome-content">
+                    <p class="welcome-tag">YOUR ACADEMIC SPACE</p>
+
+                    <h1>Everything you need,<br>
+                        all in one place.</h1>
+
+                    <p>
+                        Study smarter, clear your doubts,
+                        explore solutions and prepare for exams.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- LOGIN -->
+            <section class="login" id="login">
+
+                <h2>Student Login</h2>
+
+                <p>Enter your college Student ID to continue.</p>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="Enter your Student ID"
+                >
+
+                <button onclick="studentLogin()">LOGIN</button>
+
+            </section>
+
+
+            <!-- DASHBOARD -->
+            <section class="dashboard" id="dashboard">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">YOUR OVERVIEW</p>
+                        <h2>Student Dashboard</h2>
+                        <p>Welcome to your ABESphere study space.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card"
+                         data-target="#pyq-section">
+                        <span class="card-icon">▤</span>
+                        <h3>PYQ Library</h3>
+                        <p>Explore previous-year questions and study materials.</p>
+                        <span class="card-action">Explore →</span>
+                    </div>
+
+                    <div class="dashboard-card"
+                         data-target="#doubt-section">
+                        <span class="card-icon">✎</span>
+                        <h3>Doubt Hub</h3>
+                        <p>Ask questions and learn with other students.</p>
+                        <span class="card-action">Explore →</span>
+                    </div>
+
+                    <div class="dashboard-card"
+                         data-target="#video-section">
+                        <span class="card-icon">▷</span>
+                        <h3>Video Library</h3>
+                        <p>Learn through recorded faculty explanations.</p>
+                        <span class="card-action">Explore →</span>
+                    </div>
+
+                    <div class="dashboard-card"
+                         data-target="#exam-mode">
+                        <span class="card-icon">◷</span>
+                        <h3>Exam Mode</h3>
+                        <p>Focus on preparation and reduce distractions.</p>
+                        <span class="card-action">Explore →</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXAM COUNTDOWN -->
+            <section class="countdown" id="countdown-section">
+
+                <p class="section-label">STAY PREPARED</p>
+
+                <h2>Upcoming Examination</h2>
+
+                <h3>MT-1 Countdown</h3>
+
+                <div id="countdown">Loading...</div>
+
+            </section>
+
+
+            <!-- PYQ LIBRARY -->
+            <section class="pyq-section" id="pyq-section">
+
+                <div class="section-heading">
+                    <p class="section-label">STUDY RESOURCES</p>
+                    <h2>PYQ Library</h2>
+                    <p>Find previous-year questions and study materials.</p>
+                </div>
+
+                <input
+                    type="text"
+                    id="pyqSearch"
+                    placeholder="Search for a subject or paper..."
+                >
+
+                <div class="pyq-subjects">
+
+                    <button onclick="showPYQ('DC Circuits')">
+                        ⚡ DC CIRCUITS
+                    </button>
+
+                    <button onclick="showPYQ('Mathematics')">
+                        📐 MATHEMATICS
+                    </button>
+
+                    <button onclick="showPYQ('Programming')">
+                        💻 PROGRAMMING
+                    </button>
+
+                    <button onclick="showPYQ('Physics')">
+                        🔬 PHYSICS
+                    </button>
+
+                </div>
+
+                <div id="pyq-results" class="pyq-results">
+                    <p>Select a subject to view available PYQs.</p>
+                </div>
+
+            </section>
+
+
+            <!-- DOUBT HUB -->
+            <section class="doubt-section" id="doubt-section">
+
+                <div class="section-heading">
+                    <p class="section-label">LEARN TOGETHER</p>
+                    <h2>Doubt Hub</h2>
+                    <p>Ask questions, share doubts and help each other.</p>
+                </div>
+
+                <h3>Choose a Subject</h3>
+
+                <div class="doubt-subjects">
+
+                    <button onclick="selectSubject('Physics')">
+                        🔬 PHYSICS
+                    </button>
+
+                    <button onclick="selectSubject('Mathematics')">
+                        📐 MATHEMATICS
+                    </button>
+
+                    <button onclick="selectSubject('Programming')">
+                        💻 PROGRAMMING
+                    </button>
+
+                </div>
+
+                <div class="doubt-form">
+
+                    <input
+                        type="text"
+                        id="doubtTitle"
+                        placeholder="What is your doubt?"
+                    >
+
+                    <textarea
+                        id="doubtDescription"
+                        placeholder="Explain your question here..."
+                    ></textarea>
+
+                    <button onclick="postDoubt()">POST DOUBT</button>
+
+                </div>
+
+                <div id="doubt-results">
+                    <h3>Recent Doubts</h3>
+                </div>
+
+            </section>
+
+
+            <!-- VIDEO LIBRARY -->
+            <section class="video-section" id="video-section">
+
+                <div class="section-heading">
+                    <p class="section-label">WATCH AND LEARN</p>
+                    <h2>Video Library</h2>
+                    <p>Learn through step-by-step faculty video explanations.</p>
+                </div>
+
+                <div class="video-subjects">
+
+                    <button onclick="showVideos('Physics')">
+                        🔬 PHYSICS
+                    </button>
+
+                    <button onclick="showVideos('Mathematics')">
+                        📐 MATHEMATICS
+                    </button>
+
+                    <button onclick="showVideos('Programming')">
+                        💻 PROGRAMMING
+                    </button>
+
+                </div>
+
+                <div id="video-results">
+                    <p>Select a subject to explore video solutions.</p>
+                </div>
+
+            </section>
+
+
+            <!-- PROFILE -->
+            <section class="profile" id="profile">
+
+                <div class="section-heading">
+                    <p class="section-label">YOUR ACCOUNT</p>
+                    <h2>Student Profile</h2>
+                </div>
+
+                <div class="profile-card">
+
+                    <div class="profile-icon">🎓</div>
+
+                    <h3 id="profileName">ABES Student</h3>
+
+                    <p>
+                        Student ID:
+                        <strong id="profileStudentId">Not entered</strong>
+                    </p>
+
+                    <p>
+                        Course:
+                        <strong>B.Tech AIML</strong>
+                    </p>
+
+                    <button onclick="editProfile()">EDIT PROFILE</button>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXAM MODE -->
+            <section class="exam-mode" id="exam-mode">
+
+                <div class="section-heading">
+                    <p class="section-label">FOCUS TIME</p>
+                    <h2>Exam Mode</h2>
+                    <p>Enter focus mode and concentrate on your preparation.</p>
+                </div>
+
+                <div class="exam-info">
+
+                    <h3>🎯 Focus Mode</h3>
+
+                    <p>
+                        Minimize distractions and concentrate
+                        on your upcoming examination.
+                    </p>
+
+                </div>
+
+                <div class="exam-options">
+
+                    <button onclick="startExamMode()">
+                        🚀 START EXAM MODE
+                    </button>
+
+                </div>
+
+                <div id="exam-message"></div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="site-footer">
+                <h3>ABESphere</h3>
+                <p>Your academic community, all in one place.</p>
+                <p>Made for ABES students.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
